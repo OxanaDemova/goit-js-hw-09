@@ -6,6 +6,16 @@ const refs = {
     dataPicker: document.querySelector('#datetime-picker'),
 };
 
+function disabledBtn() {
+    refs.startBtn.disabled = true;
+}
+
+function enableBtn() {
+    refs.startBtn.disabled = false;
+}
+disabledBtn();
+
+
 const currentTime = Date.now();
 const options = {
   enableTime: true,
@@ -13,8 +23,11 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
     onClose(selectedDates) {
-        if (selectedDates <= currentTime) {
+        if (selectedDates[0] <= currentTime) {
+            disabledBtn()
           return alert('Please choose a date in the future')
+        } else {
+            enableBtn()
       }
     console.log(selectedDates[0]);
   },
@@ -22,9 +35,3 @@ const options = {
 
 flatpickr(refs.dataPicker, options)
 
-// onClose(){
-//       if (selectedDates <= currentTime) {
-//           return alert('Please choose a date in the future')
-//       }
-
-// }
