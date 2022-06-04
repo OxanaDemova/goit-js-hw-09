@@ -17,14 +17,23 @@ img {
   max-width: 100%;
 }
 
-/* .timer {
+
+/* ======= Styles for timer =======*/
+
+.timer {
   display: flex;
   justify-content: flex-start;
 }
-.label :not(:last-child){
-  margin-right: 10px;
+.field:not(:first-child){
+  margin-left: 20px
+}
+.value {
+ font-weight: 500;
+ font-size: 38px;
+
 }
 
-.field {
-  margin-right: 10px;
-} */
+.label {
+  display: block;
+  text-transform: uppercase;
+}
