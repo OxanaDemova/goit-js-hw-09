@@ -19,6 +19,10 @@ function enableBtn() {
     refs.startBtn.disabled = false;
 }
 
+function disabledInput() {
+  refs.dataPicker.disabled = true;
+}
+
 disabledBtn();
 
 const currentTime = Date.now();
@@ -99,7 +103,8 @@ const options = {
     };
 
       refs.startBtn.addEventListener('click', () => {
-      timer.start()
+        timer.start()
+        disabledInput()
     })
   },
 }
