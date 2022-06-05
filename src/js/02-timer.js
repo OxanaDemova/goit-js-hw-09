@@ -105,6 +105,7 @@ const options = {
       refs.startBtn.addEventListener('click', () => {
         timer.start()
         disabledInput()
+        disabledBtn()
     })
   },
 }
